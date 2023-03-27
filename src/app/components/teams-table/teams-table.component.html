@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Stadium</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Foundation</th>
+
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elt of teams">
+        <th scope="row">{{elt._id}}</th>
+        <td>{{elt.TeamNames}}</td> <!--TeamNames eli mawjoudin fel Model fel DB-->
+        <td>{{elt.TeamStadium}}</td>
+        <td>{{elt.TeamOwner}}</td>
+        <td>{{elt.TeamFoundation}}</td> <!--string interpolation des valeures de JS a HTML-->
+
+        <td>
+            <input type="submit" class="btn btn-success" (click)="getTeambyId(elt._id)" value="Display"> 
+            <input type="submit" class="btn btn-info" value="Edit"  style="margin-left: 5px;"> 
+  
+            <input type="submit" class="btn btn-danger" (click)="deleteTeamById(elt._id)" value="Delete"  style="margin-left: 5px;"> 
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
